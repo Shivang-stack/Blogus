@@ -5,8 +5,8 @@ import { signup } from "../auth/helper";
 
 const Signup = () => {
   const [values, setValues] = useState({
-    name: "Enter your name",
-    email: "Enter your email",
+    name: "",
+    email: "",
     password: "",
     error: "",
     success: false
@@ -41,7 +41,7 @@ const Signup = () => {
 
   const signUpForm = () => {
     return (
-      <div className="row">
+      <div className="row p-5">
         <div className="col-md-6 offset-sm-3 text-left">
           <form>
             <div className="form-group">
@@ -49,6 +49,7 @@ const Signup = () => {
               <input
                 className="form-control"
                 onChange={handleChange("name")}
+                placeholder="Enter Your Name"
                 type="text"
                 value={name}
               />
@@ -58,6 +59,7 @@ const Signup = () => {
               <input
                 className="form-control"
                 onChange={handleChange("email")}
+                placeholder="Enter Your Email"
                 type="email"
                 value={email}
               />
@@ -67,6 +69,7 @@ const Signup = () => {
               <label className="text-light">Password</label>
               <input
                 onChange={handleChange("password")}
+                placeholder="********"
                 className="form-control"
                 type="password"
                 value={password}
@@ -117,7 +120,6 @@ const Signup = () => {
       {successMessage()}
       {errorMessage()}
       {signUpForm()}
-      <p className="text-white text-center">{JSON.stringify(values)}</p>
     </Base>
   );
 };

@@ -10,13 +10,13 @@ const Card = ({
   const blogvTitle = blog ? blog.title : "A photo from pexels";
   const blogvDescrption = blog ? blog.body : "Default description";
   const blogvAuthor = blog.author? blog.author : "Anonymous";
-  const MAX_LENGTH = 20;
+  const MAX_LENGTH = 15;
   return (
-    <div className="card text-white bg-secondary border border-dark ">
-      <div className="card-header lead bg-dark">{blogvTitle}</div>
+    <div className="card text-white bg-secondary shadow ">
+      <div className="card-header lead bg-dark">{`${blogvTitle.substring(0, MAX_LENGTH)}...`}</div>
       <div className="card-body">
         <ImageHelper blog={blog} />
-        <p className="lead bg-dark font-weight-normal text-wrap">
+        <p className="lead rounded bg-dark font-weight-normal text-wrap">
         {`${blogvDescrption.substring(0, MAX_LENGTH)}...`}<a href="#"></a>
         </p>
         <p className="btn btn-dark rounded  btn-sm ">Author: {blogvAuthor}</p>

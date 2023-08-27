@@ -5,7 +5,7 @@ const BVImageHelper = ({ blog}) => {
     console.log(blog._id)
     const imageurl =`${API}/blog/photo/${blog._id}`
     return (
-      <div className="rounded border border-dark p-2">
+      <div className="rounded shadow">
         <img
           src={imageurl}
           alt=""

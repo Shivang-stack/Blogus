@@ -46,16 +46,15 @@ const BlogView =({match}) =>{
   // );
   return (
     
-    <Base title="BlogUS" description="">
-      <div className="row ">
+    <Base title={title} description="">
+      <div className="row p-5">
       <BVImageHelper blog={imageblog} />
-      <div className="container">
-          <div className="text-white text-left">
-          <h1 className="display-4 text-dark text-center">{title}</h1>
-          <p>{body}</p>
-          <h6>{author}</h6>
-          </div>
-      </div>
+        <div className="container p-3">
+            <div className="text-white text-left p-3">
+              <p>{body}</p>
+              <h5>{author}</h5>
+            </div>
+        </div>
       </div>
       
     </Base>

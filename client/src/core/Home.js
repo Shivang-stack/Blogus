@@ -28,7 +28,7 @@ export default function Home() {
         <div className="row">
           {blogs.map((blog, index) => {
             return (
-              <div key={index} className="col-4 mb-4">
+              <div key={index} className="col-lg-6">
                 <Card blog={blog} />
               </div>
             );
