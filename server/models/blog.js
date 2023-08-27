@@ -6,12 +6,12 @@ var blogSchema = new mongoose.Schema(
     title: {
       type: String,
       required: true,
-      maxlength: 200,
+      maxlength: 2000,
       trim: true
     },
     body: {
       type: String,
-      maxlength: 5000,
+      maxlength: 100000,
       trim: true
     },
     photo: {
