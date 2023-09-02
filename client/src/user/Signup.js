@@ -45,7 +45,7 @@ const Signup = () => {
         <div className="col-md-6 offset-sm-3 text-left">
           <form>
             <div className="form-group">
-              <label className="text-light">Name</label>
+              <label className="text-dark">Name</label>
               <input
                 className="form-control"
                 onChange={handleChange("name")}
@@ -55,7 +55,7 @@ const Signup = () => {
               />
             </div>
             <div className="form-group">
-              <label className="text-light">Email</label>
+              <label className="text-dark">Email</label>
               <input
                 className="form-control"
                 onChange={handleChange("email")}
@@ -66,7 +66,7 @@ const Signup = () => {
             </div>
 
             <div className="form-group">
-              <label className="text-light">Password</label>
+              <label className="text-dark">Password</label>
               <input
                 onChange={handleChange("password")}
                 placeholder="********"

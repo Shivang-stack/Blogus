@@ -83,7 +83,7 @@ const Signin = () => {
         <div className="col-md-6 offset-sm-3 text-left p-3">
           <form>
             <div className="form-group">
-              <label className="text-light">Email</label>
+              <label className="text-dark">Email</label>
               <input
                 onChange={handleChange("email")}
                 value={email}
@@ -94,7 +94,7 @@ const Signin = () => {
             </div>
 
             <div className="form-group">
-              <label className="text-light">Password</label>
+              <label className="text-dark">Password</label>
               <input
                 onChange={handleChange("password")}
                 value={password}
