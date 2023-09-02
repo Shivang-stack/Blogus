@@ -63,8 +63,8 @@ const PublishBlog = () => {
   );
 
   const createBlogForm = () => (
-    <form>
-      <span>Post photo</span>
+    <form className="p-4">
+      <h3>Post photo</h3>
       <div className="form-group">
         <label className="btn btn-block btn-primary">
           <input
@@ -91,6 +91,7 @@ const PublishBlog = () => {
           name="body" 
           className="form-control"
           placeholder="Body"
+          rows={10}
           value={body}
         />
       </div>
@@ -109,7 +110,7 @@ const PublishBlog = () => {
     <Base
       title="Publish Your Blog here!"
       description="Welcome to the blogging section"
-      className="container bg-secondary p-4"
+      className="container p-4"
     >
       <div className="row bg-dark text-white rounded">
         <div className="col-md-8 offset-md-2">

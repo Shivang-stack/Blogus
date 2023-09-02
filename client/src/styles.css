@@ -1,12 +1,11 @@
 .btn,
 .jumbotron,
 .nav :hover {
-  border-radius: 0px;
-  
+  border-radius: 0px; 
 }
 
 body {
-  background: #6c757d;
+  background: #ffffff;
 }
 .blog-img{
   height: auto;

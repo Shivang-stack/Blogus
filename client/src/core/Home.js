@@ -24,17 +24,18 @@ export default function Home() {
 
   return (
     <Base title="BlogUs" description="Welcome to BlogUs">
-      <div className="row text-center">
-        <div className="row">
+      <div className="container">
+        <div className="row text-center">
           {blogs.map((blog, index) => {
             return (
-              <div key={index} className="col-lg-6">
+              <div key={index} className="col-md-4 p-2">
                 <Card blog={blog} />
               </div>
             );
           })}
         </div>
       </div>
+
     </Base>
   );
 }

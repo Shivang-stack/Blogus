@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../styles.css";
 import Base from "./Base";
 import BVImageHelper from "./helper/BVImagehelper";
-
+import { API } from "../backend";
 import {  getBlogById } from "./helper/coreapicalls";
 
 const BlogView =({match}) =>{
@@ -42,21 +42,22 @@ const BlogView =({match}) =>{
     loadBlog(match.params.blogId);
   }, []);
   
-    
-  // );
+  const imageurl =`${API}/blog/photo/${match.params.blogId}`
+
   return (
     
-    <Base title={title} description="">
-      <div className="row p-5">
-      <BVImageHelper blog={imageblog} />
-        <div className="container p-3">
-            <div className="text-white text-left p-3">
-              <p>{body}</p>
-              <h5>{author}</h5>
-            </div>
+    <Base title='BlogUs' description="feel free">
+      <div class="card mb-3 rounded">
+        <div className="text-center bg-dark">
+          <img class="card-img-top h-25 w-25" src={imageurl} alt="Card image cap"/>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">{title}</h3>
+          <p class="card-text">{body}</p>
+          <p class="card-text"><small class="text-muted">{author}</small></p>
         </div>
       </div>
-      
+
     </Base>
   );
 }
