@@ -10,13 +10,29 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
-    <title>BlogUs</title>
+    <title id="blogTitle">BlogUs</title>
 
     <!-- Additional Meta Tags -->
     <meta name="author" content="Your Name" />
     <meta name="keywords" content="blog, website, react" />
     <!-- Add more meta tags as needed -->
 
+    <!-- JavaScript to dynamically update meta tags -->
+    <script>
+      const blogData = {
+        title: "Dynamic Blog Title", // Replace with the actual title
+        description: "Dynamic Blog Description", // Replace with the actual description
+        image: "URL_to_Dynamic_Blog_Image.png" // Replace with the actual image URL
+      };
+
+      document.title = blogData.title; // Update the page title
+      document.querySelector('meta[name="description"]').setAttribute("content", blogData.description); // Update meta description
+
+      // Update Open Graph (OG) meta tags
+      document.querySelector('meta[property="og:title"]').setAttribute("content", blogData.title);
+      document.querySelector('meta[property="og:description"]').setAttribute("content", blogData.description);
+      document.querySelector('meta[property="og:image"]').setAttribute("content", blogData.image);
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
