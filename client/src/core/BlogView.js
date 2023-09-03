@@ -4,6 +4,7 @@ import Base from "./Base";
 import BVImageHelper from "./helper/BVImagehelper";
 import { API } from "../backend";
 import {  getBlogById } from "./helper/coreapicalls";
+import { Link } from "react-router-dom";
 
 const BlogView =({match}) =>{
   const [values, setValues] = useState({
@@ -12,12 +13,13 @@ const BlogView =({match}) =>{
     body:"",
     photo:"",
     author:"",
+    authorId:""
   });
   const [imageblog, setImageblog] = useState([]);
   
   const [error, setError] = useState(false);
   const [buttonState, setButtonState] = useState("start"); 
-  const {title,body,author,id} =values;
+  const {title,body,author,authorId,id} =values;
   
   const loadBlog = blogId => {
     getBlogById(blogId).then(data => {
@@ -30,7 +32,8 @@ const BlogView =({match}) =>{
           id:data.id,
           title: data.title,
           body: data.body,
-          author: data.author
+          author: data.author,
+          authorId: data.user
         });
       }
     });
@@ -80,7 +83,7 @@ const BlogView =({match}) =>{
         <div className="text-center bg-dark">
           <img className="card-img-top h-25 w-25" src={imageurl} alt="Card image cap"/>
         </div>
-        <div classNamme="card-body">
+        <div className="card-body">
           <div className="text-left p-2">
             <button
               onClick={handleReadText}
@@ -101,7 +104,9 @@ const BlogView =({match}) =>{
           </div>
           <h3 className="card-title p-1">{title}</h3>
           <p className="card-text p-1">{body}</p>
-          <h5 className="card-text p-1"><small className="text-muted">{author}</small></h5>
+          <Link  to={`/profile/${authorId}`}>
+            <h5 className="card-text p-1"><small className="text-muted">{author}</small></h5>
+          </Link>
         </div>
       </div>
 

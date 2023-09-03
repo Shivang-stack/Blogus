@@ -9,6 +9,7 @@ import PrivateRoute from "./auth/helper/PrivateRoutes";
 import PublishBlog from "./user/PublishBlog";
 import ManageBlogs from "./user/ManageBlogs";
 import UpdateBlog from "./user/UpdateBlog";
+import ProfileView from "./core/ProfileView";
 
 
 const Routes = () => {
@@ -24,6 +25,7 @@ const Routes = () => {
           <PrivateRoute path="/user/blog/update/:blogId" exact component={UpdateBlog} />
           
           <Route path="/blogv/:blogId" exact component={BlogView} />
+          <Route path="/profile/:userId" exact component={ProfileView} />
           
         </Switch>
       </BrowserRouter>

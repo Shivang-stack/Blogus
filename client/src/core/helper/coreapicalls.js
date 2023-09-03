@@ -18,9 +18,13 @@ export const getBlogById = blogId => {
     .catch(err => console.log(err));
 };
 
-export const getAuthor = userId => {
+export const getUserInfoById = (userId,token) => {
   return fetch(`${API}/user/${userId}`, {
-    method: "GET"
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      Authorization: `Bearer ${token}`
+    },
   })
     .then(response => {
       return response.json();

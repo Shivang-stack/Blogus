@@ -29,7 +29,9 @@ const Card = ({
         <p className="card-text text-dark text-wrap">
         {`${blogvDescrption.substring(0, MAX_LENGTH)}...`}<a href="#"></a>
         </p>
-        <p class="card-text text-dark"><small class="text-muted">Author: {blogvAuthor}</small></p>
+        <Link  to={`/profile/${blog.user}`}>
+            <p className="card-text text-dark"><small className="text-muted">Author: {blogvAuthor}</small></p>
+        </Link>
         <div className="row">
           <div className="col-12">
           <Link
